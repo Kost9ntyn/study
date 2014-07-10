@@ -4,63 +4,63 @@ import java.io.IOException;
 
 public class Field {
 	
-	private static final char DEFAULT_CELL_VALUE = ' '; // значение ячейки поумолчанию
+	private static final char DEFAULT_CELL_VALUE = ' '; // Р·РЅР°С‡РµРЅРёРµ СЏС‡РµР№РєРё РїРѕСѓРјРѕР»С‡Р°РЅРёСЋ
 
 	private static final int DEFAULT_FIELD_SIZE = 3;
 	
 	private int fieldSize;
 	
-	public final char[][] field; 	// инициализируем массив
+	public final char[][] field; 	// РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РјР°СЃСЃРёРІ
 	
-	public Field() {				// конструктор класса с дефолтным размером поля		
+	public Field() {				// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° СЃ РґРµС„РѕР»С‚РЅС‹Рј СЂР°Р·РјРµСЂРѕРј РїРѕР»СЏ		
 		this(DEFAULT_FIELD_SIZE);
 	}
 	
-	public Field (int size) {		//конструктор класса с предустановленным размером поля
+	public Field (int size) {		//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° СЃ РїСЂРµРґСѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Рј СЂР°Р·РјРµСЂРѕРј РїРѕР»СЏ
 		fieldSize = size;
 		field= new char[fieldSize][fieldSize];
 	}
 	
-	Input input = new Input();		//инициализация класса Input для ввода координат
+	Input input = new Input();		//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° Input РґР»СЏ РІРІРѕРґР° РєРѕРѕСЂРґРёРЅР°С‚
 	
-	public int getFieldSize() {		//получение размера поля
+	public int getFieldSize() {		//РїРѕР»СѓС‡РµРЅРёРµ СЂР°Р·РјРµСЂР° РїРѕР»СЏ
 		return fieldSize;
 	}
 	
-	public void eraseField() {					//отчищает игровое поле
+	public void eraseField() {					//РѕС‚С‡РёС‰Р°РµС‚ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		for (int i = 0; i < fieldSize; i++) {
 			eraseLine(i);
 		}
 	}
 	
-	public void eraseLine(int lineNumber) {		//отчищает игровое поле
+	public void eraseLine(int lineNumber) {		//РѕС‚С‡РёС‰Р°РµС‚ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		for (int i = 0; i < fieldSize; i++) {
 			eraseCell(i, lineNumber);
 		}
 	}
 	
-	public void eraseCell(int i, int j) {		//отчищает игровое поле
+	public void eraseCell(int i, int j) {		//РѕС‚С‡РёС‰Р°РµС‚ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		field[i][j] = DEFAULT_CELL_VALUE;
 	}
 	
-	public void showField() {					//выводит на экран игровое поле
+	public void showField() {					//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		for (int i = 0; i < fieldSize; i++) {
 			showLine(i);
 			System.out.println();
 		}
 	}
 	
-	private void showLine(int lineNumber) {		//выводит на экран игровое поле
+	private void showLine(int lineNumber) {		//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		for (int i = 0; i < fieldSize; i++) {
 			showCell(i, lineNumber);
 		}
 	}
 		
-	public void showCell(int i, int j) {		//выводит на экран игровое поле
+	public void showCell(int i, int j) {		//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		System.out.print("[" + field[i][j] + "]");
 	}
 	
-	public void fillCellHuman(char k) throws IOException{	//ход человека
+	public void fillCellHuman(char k) throws IOException{	//С…РѕРґ С‡РµР»РѕРІРµРєР°
 		int x,y,x1,y1;
 		System.out.println("Please enter a cordinate of "+k);
 
@@ -78,7 +78,7 @@ public class Field {
 		field[x1][y1] = k;
 	}
 	
-	public void fillCellIO(){								//ход компьютера
+	public void fillCellIO(){								//С…РѕРґ РєРѕРјРїСЊСЋС‚РµСЂР°
 		int x = (int) (Math.random() * fieldSize), y = (int) (Math.random() * fieldSize);
 	    while (field[x][y] == 'O' || field[x][y] == 'X') {
 	        x = (int) (Math.random() * fieldSize);
@@ -88,11 +88,11 @@ public class Field {
 		
 	}
 	
-	char getCell(int i, int y){								//смотрим содержимое ячейки
+	char getCell(int i, int y){								//СЃРјРѕС‚СЂРёРј СЃРѕРґРµСЂР¶РёРјРѕРµ СЏС‡РµР№РєРё
 		return field[i][y];
 	}
 	
-public void checkWin(char k) {								//проверка выигрыша одного из игроков
+public void checkWin(char k) {								//РїСЂРѕРІРµСЂРєР° РІС‹РёРіСЂС‹С€Р° РѕРґРЅРѕРіРѕ РёР· РёРіСЂРѕРєРѕРІ
 		
 		if (getCell(0, 0)== k && getCell(1, 0) == k && getCell(2, 0) == k){
 			System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
