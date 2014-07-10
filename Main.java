@@ -11,7 +11,7 @@ public class Main {
 		field.showField();				//вывод игрового поля
 		
 		for (int i = 0; i < (field.getFieldSize()*field.getFieldSize())-1; i++) {	//играем пока есть ходы.
-			field.fillCellHuman('X'); 	//ход человека
+			field.fillCellHuman('X'); 		//ход человека
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 			field.showField(); 			//вывод игрового поля
 			win.checkWin('X');			//проверка выигрыша Х
