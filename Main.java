@@ -8,18 +8,18 @@ public class Main {
 		Field field = new Field();
 		Win win = new Win();
 		
-		field.showField();				//вывод игрового поля
+		field.showField();				//РІС‹РІРѕРґ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		
-		for (int i = 0; i < (field.getFieldSize()*field.getFieldSize())-1; i++) {	//играем пока есть ходы.
-			field.fillCellHuman('X'); 	//ход человека
+		for (int i = 0; i < (field.getFieldSize()*field.getFieldSize())-1; i++) {	//РёРіСЂР°РµРј РїРѕРєР° РµСЃС‚СЊ С…РѕРґС‹.
+			field.fillCellHuman('X'); 	//С…РѕРґ С‡РµР»РѕРІРµРєР°
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~");
-			field.showField(); 			//вывод игрового поля
-			win.checkWin('X');			//проверка выигрыша Х
+			field.showField(); 			//РІС‹РІРѕРґ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+			win.checkWin('X');			//РїСЂРѕРІРµСЂРєР° РІС‹РёРіСЂС‹С€Р° РҐ
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~");
-			field.fillCellIO();			//ход компьютера
+			field.fillCellIO();			//С…РѕРґ РєРѕРјРїСЊСЋС‚РµСЂР°
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~");
-			field.showField();			//вывод игрового поля
-			win.checkWin('O');			//проверка выигрыша О
+			field.showField();			//РІС‹РІРѕРґ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+			win.checkWin('O');			//РїСЂРѕРІРµСЂРєР° РІС‹РёРіСЂС‹С€Р° Рћ
 		}
 
 	}
